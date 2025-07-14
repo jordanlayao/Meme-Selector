@@ -2,6 +2,10 @@ import { catsData } from '/data.js'
 
 const emotionsRadios = document.getElementById("emotion-radios")
 
+emotionsRadios.addEventListener('change', function(e){
+    console.log(e.target.id)
+})
+
 function getEmotionsArray(cats){
     const emotionsArray = []    
     for (let cat of cats){
@@ -19,7 +23,7 @@ function renderEmotionRadios(x){
     const emotions = getEmotionsArray(x)
     for (let emotion of emotions){
         radioItems += `
-            <div id="radio">
+            <div class="radio">
                 <label for="${emotion}">${emotion}</label>
                 <input
                 type = "radio"
